@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "QCUmVMYsDitBANM+dJI96STbBo8Ur5eryeSB6BGMrD8vjfsdRzMQGH0V/rmL/w45SVzMQyGaGWgju9nguW3HCA==",
+  "dgSpecHash": "IJTURnNTHoJFLngZklPpclxpzPfU0s4fhXnTdxg2oxfkiP1m7AbaY2ZV9UMpQj7TjdzhJyA+HI1Zx4A+YWm8pg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\Desktop\\BootCampRepo\\continuation-course\\c-sharp-cc\\badge-maker\\CatWorx.BadgeMaker\\CatWorx.BadgeMaker.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Owner\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
