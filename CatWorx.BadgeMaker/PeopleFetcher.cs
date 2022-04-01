@@ -1,5 +1,6 @@
 using System;
-using System.NET;
+using System.Net;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 namespace CatWorx.BadgeMaker
@@ -42,6 +43,28 @@ namespace CatWorx.BadgeMaker
         public static List<Employee> GetFromApi()
         {
             List<Employee> employees = new List<Employee>();
+
+            using(WebClient client = new WebClient())
+            {
+                string response = client.DownloadString("https://randomuser.me/api/?results=10&inc=name,id,picture");
+                JObject json = JObject.Parse(response);
+                foreach (JToken token in json.SelectToken("results"))
+                {
+                    Random rnd = new Random(); // this is so they have a random id
+                    // Parse JSON data
+                    Employee emp = new Employee
+                    (
+                        token.SelectToken("name.first").ToString(),
+                        token.SelectToken("name.last").ToString(),
+                        rnd.Next(),
+                        token.SelectToken("picture.large").ToString()
+                    );
+
+                    employees.Add(emp);
+                    //Console.WriteLine(token.SelectToken("picture.large").ToString());
+                }
+                
+            }
 
             return employees;
         }
